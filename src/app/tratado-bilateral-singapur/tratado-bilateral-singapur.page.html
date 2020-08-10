@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar class="menu">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Tratado Bilateral De Inversión Colombia - Singapur</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides [options]="options" pager="true" #slides (ionSlideDidChange)="ionSlideChange(slides)">
+    <ion-slide>
+      <div class="swiper-zoom-container">
+        <img src="assets/img/tratado-bilateral-singapur.png">
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let item of lista">
+            {{item.titulo}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col *ngFor="let item of acuerdo" [routerLink]="item.link" (click)="setLandscape()">
+            {{item.acuerdo}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+
+  <!--Información de los tratados-->
+
+  <ion-fab vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="md-globe"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button routerLink="/list4">
+        <!--Enlazado en el ts-->
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="next()">
+        <!--Enlazado en el ts-->
+        <ion-icon name="swap"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

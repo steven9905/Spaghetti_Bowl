@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar class="menu">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>TLC Colombia - Costa Rica</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-slides [options]="options"  pager="true" #slides (ionSlideDidChange)="ionSlideChange(slides)">
+    <ion-slide>
+      <div class="swiper-zoom-container">
+        <img src="assets/img/TLC Colombia-Costa Rica.png">
+      </div>
+    </ion-slide>
+    
+    <!--Información del tratado-->
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="tratado" *ngFor="let item of lista">
+            {{item.item}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col *ngFor="let item of informacion">
+            {{item.item}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col *ngFor="let item of informacion">
+            {{item.informacion}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+
+ 
+  <!--Información de los tratados-->
+
+  <ion-fab vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="md-globe"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button routerLink="/list2"> <!--Enlazado en el ts-->
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button  (click)="next()"> <!--Enlazado en el ts-->
+        <ion-icon name="swap"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

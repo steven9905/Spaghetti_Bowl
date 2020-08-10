@@ -1,0 +1,7 @@
+{
+  "name": "Spaghetti_Bowl",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

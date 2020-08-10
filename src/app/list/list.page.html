@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar class="menu">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Tipos de Tratados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides [options]="options" pager="true" #slides (ionSlideDidChange)="ionSlideChange(slides)"> <!--Función para hacer zoom-->
+    <ion-slide>
+      <div class="swiper-zoom-container">
+        <img src="assets/img/Acuerdos.png">
+      </div>
+    </ion-slide>
+    
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-item *ngFor="let item of lista" [routerLink]="item.link" (click)="setLandscape()" class="letra">
+                <ion-icon [name]="item.icon" slot="start"></ion-icon>
+                {{item.titulo}}
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+</ion-slides>
+
+<ion-fab vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="next()">
+      <!--Enlazado en el ts-->
+      <ion-icon name="swap"></ion-icon>
+    </ion-fab-button>
+</ion-fab>
+
+</ion-content>

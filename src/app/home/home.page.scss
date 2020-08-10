@@ -1,0 +1,146 @@
+.menu{
+ color: #FEFCB5;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ font-size: 100%;
+ text-align: center;
+  ;
+}
+
+//Fondo de la pantalla de inicio
+
+.fondo{
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: center;
+  background: -webkit-radial-gradient(
+      #152849,
+      #001D2D,
+      #141518,
+      #000100,
+  );
+  
+}
+
+//-------------------------------------------------//
+
+//Generar estrellas en el fondo de la pantalla de inicio//
+
+.estrella{
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  position: absolute;
+  top:50%;
+  left: 90%;
+  border-radius: 50%;
+  }
+
+.segunda{
+  top:37%;
+  left: 46%;
+}
+
+.tercera{
+  top:26%;
+  left: 74%;
+}
+
+.cuarta{
+  top:22%;
+  left: 26%;
+}
+
+.quinta{
+  top:40%;
+  left: 10%;
+}
+
+.sexta{
+  top:90%;
+  left: 70%;
+}
+
+.octava{
+  top:75%;
+  left: 28%;
+}
+
+.estrella:nth-child(2n){
+  -webkit-animation: estrella-par 2s infinite ;
+  -moz-animation: estrella-par 2s infinite;
+
+  @-webkit-keyframes estrella-par{
+    0% {
+      box-shadow: 0 0 3px 3px rgba(255,255,255,.3); //Sombras de la figura
+    }
+    100%{
+      box-shadow: 0 0 16px 16px rgba(255,255,255,.3);
+    }
+  }
+}
+.estrella:nth-child(2n+1){
+  -webkit-animation: estrella-impar 2s infinite ;
+  -moz-animation: estrella-impar 2s infinite;
+
+  @-webkit-keyframes estrella-impar{
+    50% {
+      box-shadow: 0 0 3px 3px rgba(255,255,255,.3); //Sombras de la figura
+    }
+    45%{
+      box-shadow: 0 0 16px 16px rgba(255,255,255,.3);
+    }
+  }
+}
+
+//---------------------------------------------------------//
+
+//Posicionamiento responsive
+.mapa,
+.centrar,
+.tierra{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  
+}
+.tierra{
+  
+  width: 250px;
+  height: 250px;
+}
+//--------------------------------------------------------//
+
+//Imagen de la tierra 
+.mapa{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: url(src/assets/img/MapaPortada.png); 
+  background-size: cover;
+
+  -webkit-animation: tierra-girando 15s infinite linear;
+
+} 
+//--------------------------------------------------------------//
+//Rotacion de la tierra
+@-webkit-keyframes tierra-girando {
+  from{
+    background-position: left center;
+  }
+  to{
+    background-position: -496px center;
+  }
+}
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+//------------------------------------------------------//
+
+

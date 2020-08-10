@@ -1,0 +1,31 @@
+ion-title{
+    font-size: 110%;   
+  }
+  ion-slides{
+    width: 100%;
+  }
+  .menu{
+    text-align: center; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:rgb(254, 252, 181);
+    background: rgb(32, 54, 39);
+   }
+  ion-toolbar{
+    --background: transparent;
+    --ion-color-base: transparent !important;
+  }
+  ion-col{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: groove;
+    font-size: 80%;   
+  }
+  ion-icon{
+      color: black;
+  }
+  ion-fab-button{
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    border-radius: 50%;
+    background-color: rgba(205,219,162,.5);
+  }
+  

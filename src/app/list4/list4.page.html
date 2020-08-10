@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar class="fondo">
+    <ion-buttons slot="start" >
+    <ion-back-button routerLink="/tratado-bilateral-inversion"  text="" slot="start"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Tratados Bilaterales de Inversión
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button class="fondo"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of lista" [routerLink]="item.link" (click)="setLandscape()" class="letra">
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      {{item.titulo}}
+    </ion-item>
+  </ion-list>
+  
+</ion-content>
